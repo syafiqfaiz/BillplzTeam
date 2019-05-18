@@ -20,9 +20,12 @@ gem 'redis', '~> 4.0'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'stisla-rails'
+gem 'devise'
+gem 'annotate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'letter_opener'
 end
 
 group :development do

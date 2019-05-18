@@ -16,4 +16,6 @@
 //= require_tree .
 //= require stisla
 //= require scripts
+//= require notification.min.js
+//= require notification_caller.js
 //= require custom

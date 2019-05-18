@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render :partial => "/layouts/head" %>
+</head>
+<body class="layout-3">
+  <div id="app">
+    <%= render :partial => "/layouts/notification" %>
+    <div class="main-wrapper container">
+      <div class="navbar-bg"></div>
+      <%= render :partial => "/layouts/public_nav" %>
+
+      <%= yield %>
+      <%= render :partial => "/layouts/public_footer" %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+        <div class="card card-primary">
+          <div class="card-header"><h4>Resend confirmation instructions</h4></div>
+
+          <div class="card-body">
+            <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', tabindex:'1', required: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+                
+                <div class="invalid-feedback">
+                  Please fill in your email
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                  Resend confirmation instructions
+                </button>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%= render "devise/shared/links" %> 
+        <div class="simple-footer">
+          <a href="http://syafiqfaiz.com" target="_blank">Syafiq Faiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
