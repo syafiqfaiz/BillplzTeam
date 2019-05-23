@@ -1,0 +1,50 @@
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Users</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-10">
+        <div class="card">
+          <div class="card-header">
+            <h4>User List</h4>
+            <div class="text-right ml-auto">
+              <a href="<%= new_manage_user_path %>" class="btn btn-primary">Add User</a>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Role</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @users.each_with_index do |user, index| %>
+                  <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td><%= user.name.capitalize %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                      <% user.roles.each do |role| %>
+                        <li><%=role.name.capitalize%></li>
+                      <%end%>
+                    </td>
+                    <td>
+                      <%= link_to("View", manage_user_path(user)) %>
+                    </td>
+                  </tr>
+                <%end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+

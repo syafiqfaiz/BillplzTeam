@@ -1,0 +1,29 @@
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Profile</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-10">
+        <div class="card">
+          <div class="card-header">
+            <h4>User Profile</h4>
+            <div class="text-right ml-auto">
+              <a href="<%= manage_users_path %>" class="btn btn-light">Return To List</a>
+            </div>
+          </div>
+          <div class="card-body">
+            Name  = <%= @user.name.capitalize %> <br>
+            Email = <%= @user.email %> <br>
+
+            <div class="card-footer text-right">
+<!--               <%= link_to manage_user_path(@user) do %>
+                <button class='btn btn-primary'>Update Profile</button>
+              <%end%> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

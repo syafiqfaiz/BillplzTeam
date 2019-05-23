@@ -11,32 +11,45 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Annadi</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="index-0.html">Profile</a></li>
-            <li class=""><a class="nav-link" href="index.html">Setting</a></li>
+            <li><a class="nav-link" href="<%= manage_profile_path %>">Profile</a></li>
+            <li><a class="nav-link" href="<%= manage_users_path%>">Users</a></li>
           </ul>
         </li>
 
         <li class="menu-header">Fundraising</li>
         <li class="nav-item dropdown">
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Campaign List</span></a></li>
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Create Campaign</span></a></li>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Fundraising</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="layout-default.html">Campaign List</a></li>
+            <li><a class="nav-link" href="layout-transparent.html">Create Campaign</a></li>
+          </ul>
+        </li>
 
         <li class="menu-header">Store</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link "><i class="fas fa-th-large"></i> <span>Product List</span></a>
-          <a href="#" class="nav-link "><i class="fas fa-th-large"></i> <span>Order List</span></a>
-          <a href="#" class="nav-link "><i class="fas fa-th-large"></i> <span>Create Product</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Store</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="layout-default.html">Product List</a></li>
+            <li><a class="nav-link" href="layout-default.html">Order List</a></li>
+            <li><a class="nav-link" href="layout-default.html">Create Product</a></li>
+          </ul>
         </li>
 
         <li class="menu-header">Event</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link"><i class="far fa-user"></i> <span>Event List</span></a>
-          <a href="#" class="nav-link"><i class="far fa-user"></i> <span>Create Event</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Event</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="layout-default.html">Event List</a></li>
+            <li><a class="nav-link" href="layout-default.html">Create Event</a></li>
+          </ul>
         </li>
 
         <li class="menu-header">Contacts</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link"><i class="far fa-user"></i> <span>Contact List</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Contacts</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="layout-default.html">Contact List</a></li>
+          </ul>
         </li>
       </ul>
   </aside>

@@ -15,6 +15,7 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  locked_at              :datetime
 #
 
 require 'test_helper'

@@ -15,11 +15,20 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  locked_at              :datetime
 #
 
 class User < ApplicationRecord
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,# :registerable,
          :recoverable, :rememberable, :validatable#, :confirmable
+
+  AUTHORIZATION_ROLES = ['admin', 'committee']
+
+  def sync_role(role = nil)
+    AUTHORIZATION_ROLES.each{|role| self.remove_role role.to_sym}
+    add_role role.to_sym if role.present?
+  end
 end

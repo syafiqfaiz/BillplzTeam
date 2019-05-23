@@ -4,7 +4,8 @@ $( document ).ready(function() {
     $.notify({
       message: message
     },{
-      type: 'info'
+      type: 'info',
+      offset: 30,
     });
   }
 
@@ -13,7 +14,8 @@ $( document ).ready(function() {
     $.notify({
       message: message
     },{
-      type: 'danger'
+      type: 'danger',
+      offset: 30,
     });
   }
 });

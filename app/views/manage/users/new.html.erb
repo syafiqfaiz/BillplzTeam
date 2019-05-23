@@ -1,0 +1,28 @@
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Add User</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-10">
+        <div class="card">
+          <div class="card-header">
+            <h4>Add User</h4>
+          </div>
+          <div class="card-body">
+            <%= simple_form_for(@user, url: manage_users_path) do |f| %>
+              <%= f.input :name, required: true %>
+              <%= f.input :email, required: true %>
+              <%= f.input :password, required: true %>
+              <%= f.input :password_confirmation, required: true %>
+
+              <div class="card-footer text-right">
+                <%= f.button :submit, class: 'btn btn-primary'%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

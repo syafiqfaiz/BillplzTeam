@@ -22,6 +22,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'stisla-rails'
 gem 'devise'
 gem 'annotate'
+gem 'simple_form'
+gem 'pundit'
+gem 'rolify'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
