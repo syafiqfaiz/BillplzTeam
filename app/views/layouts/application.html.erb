@@ -9,9 +9,9 @@
           <%= render :partial => "/layouts/nav.html.erb" %>
           <%= render :partial => "/layouts/sidebar.html.erb" %>
           <%= render :partial => "/layouts/notification.html.erb" %>
-
-          <%= yield %>
-
+          <div class="full_page">
+            <%= yield %>
+          </div>
           <%= render :partial => "/layouts/footer.html.erb" %>
         </div>
       </div>

@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_044638) do
+ActiveRecord::Schema.define(version: 2019_05_23_083413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billplz_bills", force: :cascade do |t|
+    t.bigint "payable_id"
+    t.string "payable_type"
+    t.datetime "paid_at"
+    t.integer "amount"
+    t.string "payment_method"
+    t.string "payment_url"
+    t.string "payment_status"
+    t.string "bill_id"
+    t.bigint "collection_id"
+    t.string "name"
+    t.string "email", null: false
+    t.string "mobile", null: false
+    t.integer "paid_amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bill_id"], name: "index_billplz_bills_on_bill_id"
+  end
+
+  create_table "billplz_collections", force: :cascade do |t|
+    t.string "title"
+    t.string "collection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["collection_id"], name: "index_billplz_collections_on_collection_id"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"

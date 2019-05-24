@@ -1,0 +1,53 @@
+# == Schema Information
+#
+# Table name: billplz_bills
+#
+#  id             :bigint           not null, primary key
+#  payable_id     :bigint
+#  payable_type   :string
+#  paid_at        :datetime
+#  amount         :integer
+#  payment_method :string
+#  payment_url    :string
+#  payment_status :string
+#  bill_id        :string
+#  collection_id  :bigint
+#  name           :string
+#  email          :string           not null
+#  mobile         :string           not null
+#  paid_amount    :integer          not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payable_id: 
+  payable_type: MyString
+  paid_at: 2019-05-23 16:34:13
+  amount: 1
+  payment_method: MyString
+  payment_url: MyString
+  payment_status: MyString
+  bill_id: MyString
+  collection_id: 
+  name: MyString
+  email: MyString
+  mobile: MyString
+  paid_amount: 1
+
+two:
+  payable_id: 
+  payable_type: MyString
+  paid_at: 2019-05-23 16:34:13
+  amount: 1
+  payment_method: MyString
+  payment_url: MyString
+  payment_status: MyString
+  bill_id: MyString
+  collection_id: 
+  name: MyString
+  email: MyString
+  mobile: MyString
+  paid_amount: 1
