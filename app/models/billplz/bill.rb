@@ -21,4 +21,6 @@
 #
 
 class Billplz::Bill < ApplicationRecord
+  belongs_to :payable, polymorphic: true
+  belongs_to :collection, class_name: 'Billplz::Collection', optional: true
 end

@@ -19,7 +19,6 @@ gem 'redis', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'stisla-rails'
 gem 'devise'
 gem 'annotate'
 gem 'simple_form'

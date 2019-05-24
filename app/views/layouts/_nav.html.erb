@@ -1,10 +1,8 @@
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
-  <span class="mr-auto">
-    <ul class="navbar-nav mr-3">
-      <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-    </ul>
-  </span>
+  <ul class="navbar-nav mr-auto">
+    <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+  </ul>
   <ul class="navbar-nav navbar-right">
     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
       <div class="d-sm-none d-lg-inline-block">Hi, <%= current_user.name.capitalize %></div></a>
@@ -12,6 +10,7 @@
         <a href="<%= manage_profile_path %>" class="dropdown-item has-icon">
           <i class="far fa-user"></i> Profile
         </a>
+        <div class="dropdown-divider"></div>
         <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item has-icon text-danger") do %>
           <i class="fas fa-sign-out-alt"></i> Logout
         <% end %>

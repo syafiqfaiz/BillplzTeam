@@ -11,7 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
-@import "style";
-@import "components";
-@import "custom";
+@import "bootstrap.min.css";
+@import "all.scss";
+@import "style.scss";
+@import "components.css";
+@import "custom.scss";

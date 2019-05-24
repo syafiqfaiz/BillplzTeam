@@ -10,12 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery.min.js
+//= require popper.js
+//= require tooltip.js
+//= require bootstrap.min.js
+//= require jquery.nicescroll.min.js
+//= require moment.min.js
+//= require stisla.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
-//= require stisla
-//= require scripts
-//= require notification.min.js
+//= require scripts.js
 //= require notification_caller.js
 //= require custom

@@ -10,6 +10,7 @@ module AdminBillplz
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.eager_load_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('lib')
     config.time_zone = "Kuala Lumpur"
