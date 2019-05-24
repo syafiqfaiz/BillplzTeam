@@ -17,10 +17,10 @@
 //= require bootstrap.min.js
 //= require jquery.nicescroll.min.js
 //= require moment.min.js
-//= require stisla.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require stisla.js
 //= require scripts.js
 //= require notification_caller.js
 //= require custom

@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).on('ready turbolinks:load', function() {
   if($('span.notice').length > 0){
     var message = $('span.notice').attr('data-notice')
     $.notify({
