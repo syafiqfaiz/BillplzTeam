@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_083413) do
+ActiveRecord::Schema.define(version: 2019_05_30_050515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2019_05_23_083413) do
     t.bigint "collection_id"
     t.string "name"
     t.string "email", null: false
-    t.string "mobile", null: false
     t.integer "paid_amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["bill_id"], name: "index_billplz_bills_on_bill_id"
   end
 
@@ -39,7 +39,43 @@ ActiveRecord::Schema.define(version: 2019_05_23_083413) do
     t.string "collection_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "logo_url"
+    t.string "thumb_logo_url"
+    t.integer "user_id"
     t.index ["collection_id"], name: "index_billplz_collections_on_collection_id"
+  end
+
+  create_table "fundraising_campaigns", force: :cascade do |t|
+    t.string "title"
+    t.string "slug"
+    t.string "mini_description"
+    t.text "description"
+    t.string "user_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer "amount_collected"
+    t.integer "target_amount"
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_fundraising_campaigns_on_slug"
+  end
+
+  create_table "fundraising_donations", force: :cascade do |t|
+    t.integer "campaign_id"
+    t.integer "amount"
+    t.integer "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "image"
+    t.string "imageable_type"
+    t.integer "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_id"], name: "index_images_on_imageable_id"
   end
 
   create_table "roles", force: :cascade do |t|

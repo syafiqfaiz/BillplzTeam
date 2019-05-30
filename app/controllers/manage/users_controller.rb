@@ -1,4 +1,4 @@
-class Manage::UsersController < ApplicationController
+class Manage::UsersController < Manage::ManageController
   before_action :set_user, only: [:show, :delete, :edit, :update]
 
   def index
@@ -17,6 +17,7 @@ class Manage::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      InviteUserMailer.with(user: @user, password: user_params[:password]).invite.deliver_now
       redirect_to manage_user_path(@user), notice: "A new user has been created"
     else
       render :new, error: 'An error has stop user from being created'

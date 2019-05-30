@@ -1,7 +1,7 @@
 module Billplz
   class CreateCollection
-    def initialize(title, logo_url = nil)
-      @logo_url = logo_url || ENV['DEFAULT_BILLPLZ_LOGO']
+    def initialize(title, logo)
+      @logo_url = logo
       @title = title
       @endpoint = '/api/v3/collections'
     end

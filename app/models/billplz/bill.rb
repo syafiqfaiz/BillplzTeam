@@ -18,9 +18,10 @@
 #  paid_amount    :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  description    :text
 #
 
 class Billplz::Bill < ApplicationRecord
-  belongs_to :payable, polymorphic: true
+  belongs_to :payable, polymorphic: true, optional: true
   belongs_to :collection, class_name: 'Billplz::Collection', optional: true
 end

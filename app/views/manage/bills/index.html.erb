@@ -1,0 +1,49 @@
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Bills</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-10">
+        <div class="card">
+          <div class="card-header">
+            <h4>Bill List</h4>
+            <div class="card-header-action">
+              <a href="<%= new_manage_bill_path %>" class="btn btn-primary">Add Bill</a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Collection</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Amount</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @bills.each_with_index do |bill, index| %>
+                    <tr>
+                      <th scope="row"><%= index + 1 %></th>
+                      <td><%= bill.collection.title.capitalize %></td>
+                      <td><%= bill.payable_type %></td>
+                      <td><%= bill.payment_status.capitalize %></td>
+                      <td><%= bill.paid_amount %></td>
+                      <td>
+                        <%= link_to("View", manage_bill_path(bill)) %>
+                      </td>
+                    </tr>
+                  <%end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

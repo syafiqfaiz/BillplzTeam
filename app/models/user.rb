@@ -24,6 +24,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,# :registerable,
          :recoverable, :rememberable, :validatable#, :confirmable
+  has_many :collections, class_name: 'Billplz::Collection'
 
   AUTHORIZATION_ROLES = ['admin', 'committee']
 

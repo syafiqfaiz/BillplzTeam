@@ -1,0 +1,83 @@
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Bill</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-10">
+        <div class="card">
+          <div class="card-header">
+            <h4>Collection <%= @bill.collection.title.capitalize %> <small>Created at : <%= @bill.collection.created_at.strftime('%d/%m/%Y') %>, by <%= @bill.collection.user.name.capitalize %></small></h4>
+          </div>
+          <div class="card-body">
+
+            <div class="table-responsive">
+              <table class="table table-hover ">
+                <tbody>
+                    
+                    <tr>
+                      <td><strong>Id</strong></td>
+                      <td><%= @bill.id %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Payable</strong></td>
+                      <td><%= @bill.payable.class %></td>
+                    </tr>
+
+                    <tr>
+                      <td><strong>Paid at</strong></td>
+                      <td><%= @bill.paid_at %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ampunt</strong></td>
+                      <td><%= to_ringgit(@bill.amount) %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Payment url</strong></td>
+                      <td><%= @bill.payment_url %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Payment status</strong></td>
+                      <td><%= @bill.payment_status %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Bill id</strong></td>
+                      <td><%= @bill.bill_id %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Collection</strong></td>
+                      <td><%= @bill.collection.title.capitalize %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>description</strong></td>
+                      <td><%= @bill.description %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Name</strong></td>
+                      <td><%= @bill.name %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Email</strong></td>
+                      <td><%= @bill.email %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Paid amount</strong></td>
+                      <td><%= to_ringgit(@bill.paid_amount) %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Createdat</strong></td>
+                      <td><%= @bill.created_at %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Updated at</strong></td>
+                      <td><%= @bill.updated_at %></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

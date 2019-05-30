@@ -9,15 +9,25 @@
     <ul class="sidebar-menu">
       <li class=><a class="nav-link" href="<%= manage_dashboard_root_path %>"><i class="far fa-square"></i> <span>Home</span></a></li>
       <li class=><a class="nav-link" href="<%= manage_users_path %>"><i class="far fa-square"></i> <span>Users</span></a></li>
+
+      <li class="menu-header">Billplz</li>
+      <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Billplz</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="<%= manage_collections_path %>">Collection List</a></li>
+          <li><a class="nav-link" href="<%= new_manage_collection_path %>">Create Collection</a></li>
+          <li><a class="nav-link" href="<%= manage_bills_path %>">Bill List</a></li>
+        </ul>
+      </li>
+
       <li class="menu-header">Fundraising</li>
       <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Fundraising</span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link" href="layout-default.html">Campaign List</a></li>
-          <li><a class="nav-link" href="layout-transparent.html">Create Campaign</a></li>
+          <li><a class="nav-link" href="<%= manage_fundraising_index_path %>">Campaign List</a></li>
+          <li><a class="nav-link" href="<%= new_manage_fundraising_path %>">Create Campaign</a></li>
         </ul>
       </li>
-
 
       <li class="menu-header">Store</li>
       <li class="dropdown">

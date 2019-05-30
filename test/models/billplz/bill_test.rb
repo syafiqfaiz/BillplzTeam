@@ -18,6 +18,7 @@
 #  paid_amount    :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  description    :text
 #
 
 require 'test_helper'

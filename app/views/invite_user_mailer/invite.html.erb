@@ -1,0 +1,12 @@
+<h1>Hi <%= @user.name.capitalize %></h1>
+
+<p>
+  You have been invited to use <%= ENV['APP_NAME'] || 'Billplz Team' %>
+  Please use this credential to login. <br>
+  Email    = <%= @user.email %> <br>
+  Password = <%= @password %> <br>
+
+  You can go <%= link_to("Here", new_user_session_url ) %> to login.
+
+  ps: You are encouraged to set your own password.
+</p>

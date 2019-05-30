@@ -1,13 +1,34 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
+#            bills_callback POST   /bills/callback(.:format)                                                                bills#callback
+#           bills_thank_you GET    /bills/thank_you(.:format)                                                               bills#thank_you
+#              bills_cancel GET    /bills/cancel(.:format)                                                                  bills#cancel
+#              manage_bills GET    /manage/bills(.:format)                                                                  manage/bills#index
+#                           POST   /manage/bills(.:format)                                                                  manage/bills#create
+#           new_manage_bill GET    /manage/bills/new(.:format)                                                              manage/bills#new
+#               manage_bill GET    /manage/bills/:id(.:format)                                                              manage/bills#show
+#                           DELETE /manage/bills/:id(.:format)                                                              manage/bills#destroy
+#        manage_collections GET    /manage/collections(.:format)                                                            manage/collections#index
+#                           POST   /manage/collections(.:format)                                                            manage/collections#create
+#     new_manage_collection GET    /manage/collections/new(.:format)                                                        manage/collections#new
+#    edit_manage_collection GET    /manage/collections/:id/edit(.:format)                                                   manage/collections#edit
+#         manage_collection GET    /manage/collections/:id(.:format)                                                        manage/collections#show
+#                           PATCH  /manage/collections/:id(.:format)                                                        manage/collections#update
+#                           PUT    /manage/collections/:id(.:format)                                                        manage/collections#update
+#                           DELETE /manage/collections/:id(.:format)                                                        manage/collections#destroy
+#  manage_fundraising_index GET    /manage/fundraising(.:format)                                                            manage/fundraising#index
+#                           POST   /manage/fundraising(.:format)                                                            manage/fundraising#create
+#    new_manage_fundraising GET    /manage/fundraising/new(.:format)                                                        manage/fundraising#new
+#   edit_manage_fundraising GET    /manage/fundraising/:id/edit(.:format)                                                   manage/fundraising#edit
+#        manage_fundraising GET    /manage/fundraising/:id(.:format)                                                        manage/fundraising#show
+#                           PATCH  /manage/fundraising/:id(.:format)                                                        manage/fundraising#update
+#                           PUT    /manage/fundraising/:id(.:format)                                                        manage/fundraising#update
+#                           DELETE /manage/fundraising/:id(.:format)                                                        manage/fundraising#destroy
 #              manage_users GET    /manage/users(.:format)                                                                  manage/users#index
 #                           POST   /manage/users(.:format)                                                                  manage/users#create
 #           new_manage_user GET    /manage/users/new(.:format)                                                              manage/users#new
-#          edit_manage_user GET    /manage/users/:id/edit(.:format)                                                         manage/users#edit
 #               manage_user GET    /manage/users/:id(.:format)                                                              manage/users#show
-#                           PATCH  /manage/users/:id(.:format)                                                              manage/users#update
-#                           PUT    /manage/users/:id(.:format)                                                              manage/users#update
 #                           DELETE /manage/users/:id(.:format)                                                              manage/users#destroy
 #            manage_profile GET    /manage/profile(.:format)                                                                manage/user_profiles#show
 #       manage_profile_edit GET    /manage/profile/edit(.:format)                                                           manage/user_profiles#edit
@@ -29,7 +50,14 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+
+  post 'bills/callback'
+  get 'bills/thank_you'
+  get 'bills/cancel'
   namespace :manage do
+    resources 'bills', except: [:edit, :update]
+    resources 'collections'
+    resources 'fundraising'
     resources 'users', except: [:edit, :update]
     get '/profile' ,to: 'user_profiles#show'
     get '/profile/edit' ,to: 'user_profiles#edit'

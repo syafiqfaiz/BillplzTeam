@@ -8,7 +8,7 @@ module Billplz
       @description    = description
       @endpoint       = '/api/v3/bills'
       @callback_url   = ENV['HOST'] + '/payment/callbacks'
-      @redirect_url   = ENV['HOST'] + redirect_url
+      @redirect_url   = redirect_url
     end
 
     def call
